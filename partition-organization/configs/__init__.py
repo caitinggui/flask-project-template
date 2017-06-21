@@ -8,12 +8,15 @@ logger = logging.getLogger('web')
 try:
     isTest = os.environ["TEST"]
 except Exception as ex:
-    isTest = "online"
+    logger.warn("os.environ don't have 'TEST'")
+    isTest = "test"
 
 if isTest == "online":
-    from online import configs, log_config
+    logger.info('Use online config')
+    from online import config, log_config
 else:
-    from test import configs, log_config
+    logger.info('Use test config')
+    from test import config, log_config
 
 
-__all__ = [configs, log_config]
+__all__ = [config, log_config]
