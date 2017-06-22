@@ -10,7 +10,7 @@ log_config = {
         },
         "file": {
             "formatter": "standard",
-            "filename": "mylog.log",
+            "filename": "logs/mylog.log",
             "class": "logging.handlers.RotatingFileHandler",
             "level": "DEBUG"
         },
