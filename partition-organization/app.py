@@ -23,11 +23,6 @@ app.register_blueprint(user, url_prefix='/<user_id>')
 app.register_blueprint(home, url_prefix='/')
 
 
-# cover by home blueprint
-@app.route('/', methods=['GET'])
-def index():
-    return "Hello World"
-
 if __name__ == "__main__":
     logger.info("web start")
     app.run(host="0.0.0.0", port=8182, debug=True)
